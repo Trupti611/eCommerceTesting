@@ -1,0 +1,81 @@
+package QKART_SANITY_LOGIN;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class Home {
+    RemoteWebDriver driver;
+    String url = "https://crio-qkart-frontend-qa.vercel.app";
+
+    public Home(RemoteWebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void navigateToHome() {
+        if (!this.driver.getCurrentUrl().equals(this.url)) {
+            this.driver.get(this.url);
+        }
+    }
+
+    /*
+     * Function Name: VerifyLoginButton -> return true if Login Button Exists
+     */
+    public Boolean VerifyLoginButton() throws InterruptedException {
+        boolean status = false;
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to verify existence of Login Button
+       // WebElement loginButton = driver.findElement((By.xpath("//button[normalize-space()='Login']")));
+       WebElement loginButton =driver.findElementByCssSelector("@#root > div > div > div.header.MuiBox-root.css-0 > div.css-vb6e92 > button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.css-1urhf6j");
+
+        loginButton.isDisplayed();
+
+
+        
+        return status;}
+    
+
+    /*
+     * Function Name: clickLoginButton -> return true if Login Button was clicked
+     */
+    public Boolean clickLoginButton() throws InterruptedException {
+        boolean status = false;
+
+        
+    
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to click on Login 
+        WebElement clickLoginButton = driver.findElementByCssSelector("@#root > div > div > div.header.MuiBox-root.css-0 > div.css-vb6e92 > button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.css-1urhf6j");
+          clickLoginButton.click();
+            Thread.sleep(5000);
+
+        return status;
+    }
+
+    /*
+     * Function Name: VerifyLoginButton -> return true if Register Button Exists
+     */
+    public Boolean VerifyRegisterButton() throws InterruptedException {
+        boolean status = false;
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to verify existence of Register Button
+        WebElement registerButton = driver.findElementByCssSelector("@#root > div > div > div.header.MuiBox-root.css-0 > div.css-vb6e92 > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-177pwqq");
+        registerButton.isDisplayed();
+
+            
+
+        return status;
+    }
+
+    /*
+     * Function Name: clickLoginButton -> return true if Register Button was clicked
+     */
+    public Boolean clickRegisterButton() throws InterruptedException {
+        boolean status = false;
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to click on Register Button
+        WebElement registerButton = driver.findElementByCssSelector("@#root > div > div > div.header.MuiBox-root.css-0 > div.css-vb6e92 > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-177pwqq");
+
+        registerButton.click();
+            Thread.sleep(5000);
+
+        return status;
+    }
+}
